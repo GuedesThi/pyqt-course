@@ -35,18 +35,28 @@ class MainWindow(QMainWindow):
         
         # 2. Layouts
 
+        # cria uma fila vertical, onde, cada componente adiciona ficará um embaixo do outro
         main_layout = QVBoxLayout()
+        # cria uma fila horizontal, onde, cada componente adiciona ficará um do lado do outro
         button_layout = QHBoxLayout()
 
+        # coloca o botão maiúsculo na fila horizontal (a esquerda por ser o primeiro)
         button_layout.addWidget(self.button_upper)
+        # coloca o botão minúsculo na fila horizontal (ao lado do botão acima)
         button_layout.addWidget(self.button_lower)
 
+        # coloca o input na fila vertical (no topo)
         main_layout.addWidget(self.input_text)
+        # coloca a linha com os botões na segunda posição da linha vertical
         main_layout.addLayout(button_layout)
+        # coloca o texto do resulto na última posição da linha vertical
         main_layout.addWidget(self.result_label)
 
+        # cria um espaço vazio
         container = QWidget()
+        # coloca a linha vertical (com a horizontal dentro) no espaço vazio
         container.setLayout(main_layout)
+        # coloca o espaço vazio (com as linhas) para ocupar toda a tela
         self.setCentralWidget(container)
 
         # conectando botões à suas funções
