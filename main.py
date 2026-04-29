@@ -7,7 +7,7 @@ from PyQt6.QtWidgets import (
     QLineEdit,      # input
     QPushButton,    # botão
     QLabel,         # widget para exibir textos ou imagens
-    QStackedWidget, # espaço que armazena várias páginas e mostra uma por vez
+    QStackedWidget, # permite trocar de página sem abrir novas janelas, ele armazena várias e mostra uma por vez
     QFrame          # widget com moldura para criar "cards" ou divisores visuais
 )
 
@@ -176,6 +176,7 @@ class DashboardScreen(QWidget):
         content_layout = QVBoxLayout(content_area)
         content_layout.setContentsMargins(0, 0, 0, 0)
 
+        # permite trocar de página sem abrir novas janelas, ele armazena várias e mostra uma por vez
         self.content_stack = QStackedWidget()
         
         # PÁGINA HOME
